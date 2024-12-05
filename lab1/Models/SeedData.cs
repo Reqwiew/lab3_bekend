@@ -43,6 +43,16 @@ namespace lab1.Models
             }
             context.SaveChanges();
 
+            var users = new[]
+            {
+                new Person { Login = "root", Password = "toor"},
+            };
+            if (!context.Users.Any())
+            {
+                context.Users.AddRange(users);
+            }
+            context.SaveChanges();
+
         }
 
     }
